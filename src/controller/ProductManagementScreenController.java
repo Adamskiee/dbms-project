@@ -110,7 +110,7 @@ public class ProductManagementScreenController {
     @FXML
     void chckboxName_onClicked(ActionEvent event) {
         if(chckboxName.isSelected()){
-            txtfieldName_updateSec.setDisable(false);
+            txtfieldName_updateSec.setDisable(false); //asdfasdf
         }else{
             txtfieldName_updateSec.setDisable(true);
         }
