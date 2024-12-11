@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
+
+<BorderPane fx:id="borderPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="668.0" prefWidth="650.0" stylesheets="@../styles/prodmanagement.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ProductManagementScreenController">
+   <center>
+      <TableView fx:id="tableView" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+        <columns>
+          <TableColumn fx:id="idColumn" editable="false" prefWidth="76.0" sortable="false" text="Product ID" />
+          <TableColumn fx:id="nameColumn" editable="false" prefWidth="355.20005798339844" sortable="false" text="Name" />
+            <TableColumn fx:id="priceColumn" editable="false" prefWidth="171.99993896484375" sortable="false" text="Price" />
+            <TableColumn fx:id="quantityColumn" editable="false" prefWidth="108.00006103515625" sortable="false" text="Quantity" />
+        </columns>
+         <columnResizePolicy>
+            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+         </columnResizePolicy>
+      </TableView>
+   </center>
+   <bottom>
+      <AnchorPane prefHeight="186.0" prefWidth="650.0" style="-fx-background-color: #AADAFB;" BorderPane.alignment="CENTER">
+         <children>
+            <Label layoutX="482.0" layoutY="12.0" text="Remove Product" />
+            <TextField fx:id="txtfieldId_removeSec" layoutX="482.0" layoutY="45.0" onMouseClicked="#txtfieldId_removeSec_onClicked" promptText="Product ID" />
+            <Line endX="0.999969482421875" endY="144.79995727539062" layoutX="187.0" layoutY="32.0" startX="0.999969482421875" startY="-22.4000186920166" />
+            <Line endX="0.999969482421875" endY="144.79995727539062" layoutX="467.0" layoutY="32.0" startX="0.999969482421875" startY="-22.4000186920166" />
+            <Button fx:id="buttonRemove" layoutX="482.0" layoutY="151.0" mnemonicParsing="false" onAction="#buttonRemove_onClicked" prefHeight="26.0" prefWidth="149.0" stylesheets="@../styles/prodmanagement.css" text="Remove" />
+            <VBox alignment="CENTER" layoutX="14.0" layoutY="11.0" prefHeight="164.0" prefWidth="159.0" spacing="15.0">
+               <children>
+                  <VBox prefHeight="115.0" prefWidth="159.0" spacing="10.0">
+                     <children>
+                        <HBox prefHeight="100.0" prefWidth="200.0">
+                           <children>
+                              <Label text="Add Product" />
+                              <Pane prefHeight="12.0" prefWidth="30.0" />
+                              <Label fx:id="lblMessage_addsection" text="*Invalid" textFill="RED" visible="false" />
+                           </children>
+                        </HBox>
+                        <TextField fx:id="txtfieldName_addSec" onMouseClicked="#txtfieldName_addSec_onCLicked" promptText="Product Name" />
+                        <TextField fx:id="txtfieldPrice_addSec" layoutX="10.0" layoutY="64.0" promptText="Product Price" />
+                        <TextField fx:id="txtfieldQuantity_addSec" promptText="Product Quantity" />
+                     </children>
+                  </VBox>
+                  <Button fx:id="buttonAdd" mnemonicParsing="false" onAction="#buttonAdd_onClicked" prefHeight="26.0" prefWidth="149.0" stylesheets="@../styles/prodmanagement.css" text="Add" />
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" layoutX="204.0" layoutY="9.0" prefHeight="164.0" prefWidth="242.0" spacing="15.0">
+               <children>
+                  <VBox prefHeight="170.0" prefWidth="123.0" spacing="10.0">
+                     <children>
+                        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                           <children>
+                              <Label prefHeight="18.0" prefWidth="174.0" text="Update Product" />
+                              <Pane prefHeight="26.0" prefWidth="134.0" HBox.hgrow="ALWAYS">
+                                 <children>
+                                    <Label fx:id="lblMessage_updatesection" layoutX="3.0" layoutY="4.0" text="*Invalid" textFill="RED" visible="false" />
+                                 </children></Pane>
+                              <TextField fx:id="txtfieldId_updateSec" onMouseClicked="#txtfieldId_updateSec_onCLicked" prefHeight="26.0" prefWidth="179.0" promptText="Product ID" />
+                           </children>
+                        </HBox>
+                        <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                           <children>
+                              <TextField fx:id="txtfieldName_updateSec" disable="true" minWidth="0.0" prefHeight="26.0" prefWidth="148.0" promptText="New Product Name" visible="false" />
+                              <TextField fx:id="txtfieldPrice_updateSec" disable="true" layoutY="32.0" prefHeight="26.0" prefWidth="148.0" promptText="New Product Price" visible="false" />
+                              <TextField fx:id="txtfieldQuantity_updateSec" disable="true" layoutY="65.0" prefWidth="148.0" promptText="New Product Quantity" visible="false" />
+                              <CheckBox fx:id="chckboxName" layoutX="156.0" layoutY="5.0" mnemonicParsing="false" onAction="#chckboxName_onClicked" visible="false" />
+                              <CheckBox fx:id="chckboxPrice" layoutX="156.0" layoutY="36.0" mnemonicParsing="false" onAction="#chckboxPrice_onClicked" visible="false" />
+                              <CheckBox fx:id="chckboxQuantity" layoutX="156.0" layoutY="69.0" mnemonicParsing="false" onAction="#chckboxQuantity_onClicked" visible="false" />
+                              <Button fx:id="buttonSearch" layoutX="144.0" mnemonicParsing="false" onAction="#buttonSearch_onClicked" prefHeight="26.0" prefWidth="97.6" stylesheets="@../styles/prodmanagement.css" text="Search" />
+                           </children>
+                        </AnchorPane>
+                        <Button fx:id="buttonUpdate" disable="true" mnemonicParsing="false" onAction="#buttonUpdate_onClicked" prefHeight="26.0" prefWidth="149.0" stylesheets="@../styles/prodmanagement.css" text="Update" visible="false" />
+                     </children>
+                  </VBox>
+               </children>
+            </VBox>
+            <Label fx:id="lblMessage_removesection" layoutX="590.0" layoutY="12.0" text="*invalid" textFill="RED" visible="false" />
+         </children>
+      </AnchorPane>
+   </bottom>
+</BorderPane>

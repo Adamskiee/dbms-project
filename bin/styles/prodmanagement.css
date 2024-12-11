@@ -1,0 +1,28 @@
+@font-face {
+    font-family: "ADLaM Display";
+    src: url("ADLaMDisplay-Regular.ttf");
+}
+
+@font-face {
+    font-family: "Afacad";
+    src: url("Afacad-Regular.ttf");
+}
+.label{
+    -fx-font-family: "ADLaM Display";
+}
+
+.button{
+    -fx-font-family: "ADLaM Display";
+    -fx-background-color: #2869FF;
+    -fx-text-fill: white;
+    -fx-border-radius: 7px;
+    -fx-background-radius: 7px;
+}
+
+.button:hover{
+    -fx-background-color:#4980ff;
+}
+
+.button:pressed{
+    -fx-background-color:#1f4fbe;
+}
