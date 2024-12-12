@@ -285,12 +285,12 @@ public class POSScreenController {
         );
 
         //Allow only numerical for textfields
-        txtfieldId.textProperty().addListener((observable, oldValue, newValue) -> {
+        txtfieldId.textProperty().addListener((_, oldValue, newValue) -> {
             if (!newValue.matches("\\d*")) { 
                 txtfieldId.setText(oldValue);
             }
         });
-        txtfieldQuantity.textProperty().addListener((observable, oldValue, newValue) -> {
+        txtfieldQuantity.textProperty().addListener((_, oldValue, newValue) -> {
             if (!newValue.matches("\\d*")) { 
                 txtfieldQuantity.setText(oldValue);
             }

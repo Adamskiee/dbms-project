@@ -1,6 +1,5 @@
 package controller;
 
-// import App;
 import database.UserDAO;
 import main.App;
 import models.User;
@@ -58,7 +57,7 @@ public class LoginScreenController{
     }
     @FXML
     void initialize(){
-        txtfieldUsername.textProperty().addListener((observable, oldValue, newValue) -> {
+        txtfieldUsername.textProperty().addListener((_, oldValue, newValue) -> {
             if (!newValue.matches("[a-zA-Z0-9]*")) {  // Allow only letters and digits
                 txtfieldUsername.setText(oldValue);
             }

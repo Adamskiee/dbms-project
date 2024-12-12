@@ -1,9 +1,11 @@
 package models;
+
 public class User {
-    protected int user_id;
-    protected String username;
-    protected String password;
-    protected String role;
+    private int user_id;
+    private String username;
+    private String password;
+    private String role;
+    
     public User(int user_id, String username, String password, String role){
         this.user_id = user_id;
         this.username = username;

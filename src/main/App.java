@@ -18,7 +18,7 @@ public class App extends Application{
     public void start(Stage stage) throws Exception {
         primaryStage = stage;
 
-        primaryStage.setOnShown(event -> {
+        primaryStage.setOnShown(_ -> {
             centerStage();
         });
         switchScene("/view/LoginScreen.fxml");

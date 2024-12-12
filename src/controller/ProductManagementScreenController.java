@@ -339,19 +339,19 @@ public class ProductManagementScreenController {
         SimpleStringProperty initialQuantity = new SimpleStringProperty();
 
         // Capture initial values dynamically (e.g., after loading data)
-        txtfieldName_updateSec.textProperty().addListener((obs, oldVal, newVal) -> {
+        txtfieldName_updateSec.textProperty().addListener((_, oldVal, newVal) -> {
             if (initialName.get() == null || oldVal.isEmpty()) {
                 initialName.set(newVal);
             }
         });
 
-        txtfieldPrice_updateSec.textProperty().addListener((obs, oldVal, newVal) -> {
+        txtfieldPrice_updateSec.textProperty().addListener((_, oldVal, newVal) -> {
             if (initialPrice.get() == null || oldVal.isEmpty()) {
                 initialPrice.set(newVal);
             }
         });
 
-        txtfieldQuantity_updateSec.textProperty().addListener((obs, oldVal, newVal) -> {
+        txtfieldQuantity_updateSec.textProperty().addListener((_, oldVal, newVal) -> {
             if (initialQuantity.get() == null || oldVal.isEmpty()) {
                 initialQuantity.set(newVal);
             }
@@ -387,32 +387,32 @@ public class ProductManagementScreenController {
             )
         );
 
-        txtfieldQuantity_addSec.textProperty().addListener((observable, oldValue, newValue) -> {
+        txtfieldQuantity_addSec.textProperty().addListener((_, oldValue, newValue) -> {
             if (!newValue.matches("\\d*")) { 
                 txtfieldQuantity_addSec.setText(oldValue);
             }
         });
-        txtfieldQuantity_updateSec.textProperty().addListener((observable, oldValue, newValue) -> {
+        txtfieldQuantity_updateSec.textProperty().addListener((_, oldValue, newValue) -> {
             if (!newValue.matches("\\d*")) { 
                 txtfieldQuantity_updateSec.setText(oldValue);
             }
         });
-        txtfieldId_removeSec.textProperty().addListener((observable, oldValue, newValue) -> {
+        txtfieldId_removeSec.textProperty().addListener((_, oldValue, newValue) -> {
             if (!newValue.matches("\\d*")) { 
                 txtfieldId_removeSec.setText(oldValue);
             }
         });
-        txtfieldId_updateSec.textProperty().addListener((observable, oldValue, newValue) -> {
+        txtfieldId_updateSec.textProperty().addListener((_, oldValue, newValue) -> {
             if (!newValue.matches("\\d*")) { 
                 txtfieldId_updateSec.setText(oldValue);
             }
         });
-        txtfieldPrice_addSec.textProperty().addListener((observable, oldValue, newValue) -> {
+        txtfieldPrice_addSec.textProperty().addListener((_, oldValue, newValue) -> {
             if (!newValue.matches("\\d*\\.?\\d*")) { 
                 txtfieldPrice_addSec.setText(oldValue);
             }
         });
-        txtfieldPrice_updateSec.textProperty().addListener((observable, oldValue, newValue) -> {
+        txtfieldPrice_updateSec.textProperty().addListener((_, oldValue, newValue) -> {
             if (!newValue.matches("\\d*\\.?\\d*")) { 
                 txtfieldPrice_updateSec.setText(oldValue);
             }

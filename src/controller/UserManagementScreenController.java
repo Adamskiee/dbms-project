@@ -202,7 +202,6 @@ public class UserManagementScreenController {
         txtfieldName_updateSec.setDisable(true);
         txtfieldPass_updateSec.setDisable(true);
         comboxRole_updateSec.setVisible(false);
-        // buttonUpdate.setD
     }
     @FXML
     void txtfieldId_removeSec_onClicked(MouseEvent event) {
@@ -293,27 +292,6 @@ public class UserManagementScreenController {
         }
     }
 
-    // boolean showConfirmationDialog() {
-    //     // Create an Alert of type Confirmation
-    //     Alert alert = new Alert(AlertType.CONFIRMATION);
-    //     alert.setTitle("Confirmation");
-    //     alert.setHeaderText("Are you sure?");
-    //     alert.setContentText("Do you want to proceed with this action?");
-
-    //     boolean choice = true;
-    //     // Show the dialog and wait for a response
-    //     alert.showAndWait().ifPresent(response -> {
-    //         if (response == javafx.scene.control.ButtonType.OK) {
-    //             System.out.println("User confirmed the action.");
-    //             choice = true;
-    //         } else {
-    //             System.out.println("User canceled the action.");
-    //             choice = false;
-    //         }
-    //     });
-    //     return choice;
-    // }
-
     @FXML
     void initialize(){
         idColumn.setCellValueFactory(new PropertyValueFactory<>("user_id"));
@@ -346,20 +324,20 @@ public class UserManagementScreenController {
         SimpleStringProperty initialRole = new SimpleStringProperty();
 
         // Capture initial values dynamically for text fields
-        txtfieldName_updateSec.textProperty().addListener((obs, oldVal, newVal) -> {
+        txtfieldName_updateSec.textProperty().addListener((_, oldVal, newVal) -> {
             if (initialName.get() == null || oldVal.isEmpty()) {
                 initialName.set(newVal);
             }
         });
 
-        txtfieldPass_updateSec.textProperty().addListener((obs, oldVal, newVal) -> {
+        txtfieldPass_updateSec.textProperty().addListener((_, oldVal, newVal) -> {
             if (initialPass.get() == null || oldVal.isEmpty()) {
                 initialPass.set(newVal);
             }
         });
 
         // Capture initial value dynamically for the ComboBox
-        comboxRole_updateSec.valueProperty().addListener((obs, oldVal, newVal) -> {
+        comboxRole_updateSec.valueProperty().addListener((_, oldVal, newVal) -> {
             if (initialRole.get() == null || oldVal == null) {
                 initialRole.set(newVal);
             }
@@ -395,12 +373,12 @@ public class UserManagementScreenController {
         );
 
         //Allow only numerical for textfields
-        txtfieldId_removeSec.textProperty().addListener((observable, oldValue, newValue) -> {
+        txtfieldId_removeSec.textProperty().addListener((_, oldValue, newValue) -> {
             if (!newValue.matches("\\d*")) { 
                 txtfieldId_removeSec.setText(oldValue);
             }
         });
-        txtfieldId_updateSec.textProperty().addListener((observable, oldValue, newValue) -> {
+        txtfieldId_updateSec.textProperty().addListener((_, oldValue, newValue) -> {
             if (!newValue.matches("\\d*")) { 
                 txtfieldId_updateSec.setText(oldValue);
             }

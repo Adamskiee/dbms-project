@@ -1,6 +1,5 @@
 package models;
 
-
 public class Product {
     private int productID;
     private String productName;
@@ -40,11 +39,5 @@ public class Product {
     }
     public int getStockQuantity() {
         return stockQuantity;
-    }
-
-    @Override
-    public String toString() {
-        // TODO Auto-generated method stub
-        return super.toString();
     }
 }

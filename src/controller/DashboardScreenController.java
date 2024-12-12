@@ -6,11 +6,8 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
-// import javafx.scene.layout.AnchorPane;
-// import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.VBox;
-// import javafx.scene.layout.Pane;
 import main.App;
 import models.User;
 

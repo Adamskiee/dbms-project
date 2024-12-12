@@ -1,4 +1,5 @@
 package models;
+
 public class SoldItem {
     private int productId;
     private String productName;
